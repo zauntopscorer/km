@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        <mapper namespace="com.fxq.spring_mybatis.mapper.FileMapper">
+
+    <select id="queryFileList" resultType="com.fxq.spring_mybatis.domain.File" >
+        select * from f_docfile
+    </select>
+
+    <select id="queryFileById" parameterType="integer" resultType="com.fxq.spring_mybatis.domain.File">
+        select * from f_docfile where id=#{id}
+    </select>
+
+    <delete id="deleteFileById"  parameterType="integer" >
+        delete from f_docfile where id=#{id}
+    </delete>
+
+<!--    <insert id="insertUser" parameterType="com.fxq.spring_mybatis.domain.User" useGeneratedKeys="true">-->
+<!--        INSERT INTO USER(username,PASSWORD)VALUES(#{username},#{password})-->
+<!--    </insert>-->
+
+    <update id="updateFileById" parameterType="com.fxq.spring_mybatis.domain.File">
+        UPDATE f_docfile SET username=#{username},password=#{password} WHERE id = #{id}
+    </update>
+
+<!--    <select id="addUser" parameterType="integer" resultType="com.fxq.spring_mybatis.domain.User">-->
+<!--        INSERT INTO USER(id,username,PASSWORD)VALUES(#{param1},'fxq','426521')-->
+<!--    </select>-->
+    <select id="numberOfFile"  resultType="java.lang.Integer">
+        select count(*) from f_docfile
+    </select>
+
+    <update id="modify" parameterType="com.fxq.spring_mybatis.domain.File" >
+
+    </update>
+</mapper>

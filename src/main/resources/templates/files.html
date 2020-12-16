@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>showFiles</title>
+    <style type="text/css">
+        table {border-collapse: collapse; font-size: 14px; width: 80%; margin: auto}
+        table, th, td {border: 1px solid darkslategray;padding: 10px}
+    </style>
+</head>
+<body>
+<div style="text-align: center">
+    <span style="color: darkslategray; font-size: 30px">欢迎光临！</span>
+    <hr/>
+    <table class="list">
+        <tr>
+            <th>id</th>
+            <th>fid</th>
+            <th>fileName</th>
+            <th>fileCode</th>
+            <th>fileStatus</th>
+            <th>versionId</th>
+            <th>versionNumber</th>
+            <th>filePath</th>
+            <th>fileSize</th>
+            <th>isDel</th>
+            <th>creator</th>
+            <th>createDate</th>
+            <th>modifier</th>
+            <th>modifyDate</th>
+        </tr>
+        <!--        使用thymeleaf语法遍历输出用户的id，name，password-->
+        <tr th:each="file : ${files}">
+            <td th:text="${file.id}">null</td>
+            <td th:text="${file.fid}">null</td>
+            <td th:text="${file.fileName}">null</td>
+            <td th:text="${file.fileCode}">null</td>
+            <td th:text="${file.fileStatus}">null</td>
+            <td th:text="${file.versionId}">null</td>
+            <td th:text="${file.versionNumber}">null</td>
+            <td th:text="${file.filePath}">null</td>
+            <td th:text="${file.fileSize}">null</td>
+            <td th:text="${file.isDel}">null</td>
+            <td th:text="${file.creator}">null</td>
+            <td th:text="${file.createDate}">null</td>
+            <td th:text="${file.modifier}">null</td>
+            <td th:text="${file.modifyDate}">null</td>
+        </tr>
+        <a href=""></a>
+    </table>
+</div>
+</body>
+</html>
